@@ -8,11 +8,11 @@ namespace vsite::oop::v4
         switch (animalCode)
         {
         case 1:
-            return std::make_unique<cockroach>(cockroach());
+            return std::make_unique<cockroach>();
         case 2:
-            return std::make_unique<sparrow>(sparrow());
+            return std::make_unique<sparrow>();
         case 3:
-            return std::make_unique<tarantula>(tarantula());
+            return std::make_unique<tarantula>();
         default:
             return nullptr;
         }
@@ -45,12 +45,12 @@ namespace vsite::oop::v4
     }
 
     leg_counter::leg_counter()
-        : mLegs{ 0 }
     {
+        mLegs = 0;
     }
 
     std::string leg_counter::add_animal(const animal* createdAnimal) {
-        mLegs = mLegs + createdAnimal->legs();
+        mLegs += createdAnimal->legs();
         return createdAnimal->species();
     }
 

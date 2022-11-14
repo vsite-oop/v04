@@ -19,18 +19,21 @@ int main()
         << "3. Tarantula\n"
         << "Vas izbor: " << endl;
 
-    while (choice != 0)
+    while (true)
     {
         cin >> choice;
+
+        if (choice == 0) {
+            cout << "\nIZLAZAK" << endl;
+            break;
+        }
 
         if (choice > 0 && choice < 4) {
             string added_animal_name = lc.add_animal(animal_factory(choice).get());
             cout << "Dodana zivotinja: " << added_animal_name << endl;
             cout << "Unesite sljedecu: " << endl;
         }
-        else if (choice == 0) {
-            cout << "\nIZLAZAK" << endl;
-        }
+
         else {
             cout << "Pogresan unos, ponovite unos: " << endl;
         }
