@@ -20,6 +20,13 @@ int main()
 			break;
 
 		auto newAnimal = vsite::oop::v4::animal_factory(animalID);
+
+		if (!newAnimal)
+		{
+			std::cout << "Invalid input!\n";
+			continue;
+		}
+
 		std::cout << animalID << ". " << newAnimal->species() << '\n';
 		legCounter.add_animal(newAnimal.get());
 	}

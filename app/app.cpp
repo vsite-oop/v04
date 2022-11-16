@@ -49,7 +49,7 @@ namespace vsite::oop::v4
             return std::make_unique<tarantula>();
 
         default:
-            break;
+            return nullptr;
         }
     }
 
