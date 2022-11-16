@@ -41,15 +41,12 @@ namespace vsite::oop::v4
         {
         case 1:
             return std::make_unique<cockroach>();
-            break;
 
         case 2:
             return std::make_unique<sparrow>();
-            break;
 
         case 3:
             return std::make_unique<tarantula>();
-            break;
 
         default:
             break;

@@ -17,21 +17,18 @@ namespace vsite::oop::v4
     class spider : public animal
     {
     public:
-        virtual std::string species() const = 0;
         uint32_t legs() const override;
     };
 
     class insect : public animal
     {
     public:
-        virtual std::string species() const = 0;
         uint32_t legs() const override;
     };
 
     class bird : public animal
     {
     public:
-        virtual std::string species() const = 0;
         uint32_t legs() const override;
     };
 
