@@ -7,30 +7,30 @@ namespace vsite::oop::v4
 	}
 
 	uint32_t insect::legs() const {
-		return ins_legs;
+		return 6;
 	}
 
 	uint32_t spider::legs() const {
-		return sp_legs;
+		return 8;
 	}
 
 	uint32_t bird::legs() const {
-		return brd_legs;
+		return 2;
 	}
 
 
 	std::string cockroach::species() const {
-		return ins_name;
+		return "cockroach";
 	}
 
 
 	std::string sparrow::species() const {
-		return bir_name;
+		return "sparrow";
 	}
 
 
 	std::string tarantula::species() const {
-		return spi_name;
+		return "tarantula";
 	}
 
 
@@ -54,6 +54,8 @@ namespace vsite::oop::v4
 			return std::make_unique<sparrow>();
 		case 3:
 			return std::make_unique<tarantula>();
+		default:
+			return nullptr;
 		}
 	}
 

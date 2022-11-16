@@ -7,14 +7,16 @@ using namespace vsite::oop::v4;
 int main()
 {
 	leg_counter lc;
-	uint32_t id = 1;
 
-	while (id) {
+	while (true) {
 		std::cout << "Enter animal ID (0 to terminate): ";
-		std::cin >> id;
+		uint32_t id; std::cin >> id;
 		if (id == 0) break;
-		lc.add_animal(animal_factory(id).get());
-		std::cout << "Species name: " << animal_factory(id).get()->species() << "\n";
+		if (id > 3) {
+			std::cout << "Please enter animal ID in range 1-3!\n";
+			continue;
+		}
+		std::cout << "Species name: " << lc.add_animal(animal_factory(id).get()) << "\n";
 	}
 	std::cout << "Total leg count is: " << lc.legs();
 }
