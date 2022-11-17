@@ -46,7 +46,7 @@ namespace vsite::oop::v4
 	class cockroach : public insect {
 		unsigned id = 1;
 	public:
-		virtual std::string species() const;  // Must copy pure virtual function in derived class!
+		virtual std::string species() const;
 	};
 
 
@@ -63,15 +63,39 @@ namespace vsite::oop::v4
 		virtual std::string species() const;
 	};
 
-
+	/*Metodom get() u test metodi iz pametnog pokazivaèa n dohvaæamo
+	njegov interni (obièni) pokazivaè na alocirani objekt.
+	(valjda zato jer se unique_ptr ne može prenositi)
+	
+	add_animal primi pokazivaè na odreðenu životinju i onda metodom
+	species() iz životinje dobijemo njen naziv u obliku stringa.
+	
+	legs() samo vraæa leg_number, a add_animal je ta koja
+	poveæava broj nogu!*/
 	class leg_counter {
+		unsigned leg_number = 0;
 	public:
-		std::string add_animal();
+		std::string add_animal(animal* a);
+		unsigned legs() const;
 	};
 
+	/*"animal_factory() je factory pattern - jedina funkcija koja proizvodi
+	konkretne životinje. I jedina koja zna kojoj životinji odgovora koji
+	identifikator (ovdje broj). Mora/može vraæati pointer na baznu klasu
+	(jer tako jedino može vratiti bilo koju životinju), a da nema
+	problema sa trajanjem i brisanjem pointera vraæa smart pointer -
+	std::unique_ptr."
 
-	//animal_factory(unsigned id);
+	Od C++11 se koristi unique_ptr pametni pokazivaè. Za razliku od danas
+	starog i deprecated auto_ptr, unique_ptr uopæe ne dopušta korištenje
+	semantike kopiranja za prijenos vlasništva, veæ da bi to bilo moguæe
+	mora se koristiti semantika prijenosa pomoæu funkcije move.
+
+	Kada trebamo moguænost da jedan objekt ima više vlasnika koristimo
+	shared_ptr pametni pokazivaè.*/
+	std::unique_ptr<animal> animal_factory(unsigned id);
 }
+
 
 
 

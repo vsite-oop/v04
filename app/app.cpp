@@ -26,6 +26,29 @@ namespace vsite::oop::v4
 	unsigned spider::legs() const {
 		return 8;
 	}
+
+	std::unique_ptr<animal> animal_factory(unsigned id) {
+		std::unique_ptr<cockroach> cp(new cockroach);
+		std::unique_ptr<sparrow> sp(new sparrow);
+		std::unique_ptr<tarantula> tp(new tarantula);
+		switch (id) {
+		case 1:
+			return cp;
+		case 2:
+			return sp;
+		case 3:
+			return tp;
+		}
+	};
+
+	std::string leg_counter::add_animal(animal* a) {
+		leg_number += a->legs();
+		return a->species();
+	};
+
+	unsigned leg_counter::legs() const {
+		return leg_number;
+	};
 }
 
 
