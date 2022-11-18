@@ -64,8 +64,8 @@ namespace vsite::oop::v4
 	};
 
 	/*Metodom get() u test metodi iz pametnog pokazivaèa n dohvaæamo
-	njegov interni (obièni) pokazivaè na alocirani objekt.
-	(valjda zato jer se unique_ptr ne može prenositi)
+	njegov interni (obièni) pokazivaè na alocirani objekt (valjda zato
+	jer se unique_ptr ne može prenositi).
 	
 	add_animal primi pokazivaè na odreðenu životinju i onda metodom
 	species() iz životinje dobijemo njen naziv u obliku stringa.
@@ -92,10 +92,11 @@ namespace vsite::oop::v4
 	mora se koristiti semantika prijenosa pomoæu funkcije move.
 
 	Kada trebamo moguænost da jedan objekt ima više vlasnika koristimo
-	shared_ptr pametni pokazivaè.*/
+	shared_ptr pametni pokazivaè.
+
+	make_unique je funkcija za napraviti unique_ptr */
 	std::unique_ptr<animal> animal_factory(unsigned id);
 }
-
 
 
 
@@ -182,4 +183,3 @@ namespace vsite::oop::v4
 
 	// animal_factory(unsigned id);
 }*/
-
