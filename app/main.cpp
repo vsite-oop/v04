@@ -1,5 +1,5 @@
 #include "app.h"
-#include "iostream"
+#include <iostream>
 
 // read animal id's (until 0) and display species name
 // display total leg count
@@ -7,7 +7,6 @@ using namespace vsite::oop::v4;
 
 int main()
 {
-    using namespace vsite::oop::v4;
 
     int animal = 10;
     leg_counter lc;

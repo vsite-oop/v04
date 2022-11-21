@@ -18,9 +18,9 @@ namespace vsite::oop::v4
     std::unique_ptr<animal> animal_factory(const unsigned animalNum) {
         switch (animalNum)
         {
-        case 1: return std::make_unique<cockroach>(cockroach());
-        case 2: return std::make_unique<sparrow>(sparrow());
-        case 3: return std::make_unique<tarantula>(tarantula());
+        case 1: return std::make_unique<cockroach>();
+        case 2: return std::make_unique<sparrow>();
+        case 3: return std::make_unique<tarantula>();
         default:
             return nullptr;
         }
