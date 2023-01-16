@@ -10,6 +10,7 @@ namespace vsite::oop::v4
 		virtual unsigned int legs() = 0;
 
 		virtual std::string species() = 0;
+		virtual ~animal() = 0;
 	};
 	////////////////////////////
 	class insect : public animal {
@@ -39,15 +40,19 @@ namespace vsite::oop::v4
 		std::string species() override;
 	};
 
+	//animal* animal_factory(unsigned int animal_id);
 
 	class leg_counter {
-	private:
+	public:
 		unsigned int leg_cnt = 0;
 	public:
-		animal add_animal();
-		unsigned int legs();
-
+		std::string add_animal(animal* a); // vraca zivatinju koja ima povratnu vrijednost string
+		leg_counter();
+		unsigned int legs() const;
 	};
 
+	//int total_leg_count();
+
+	std::unique_ptr <animal> animal_factory(unsigned int animal_id);
 	//std::unique_ptr <animal> animal_factory(unsigned int animal_id);
 }
