@@ -6,20 +6,16 @@
 // display total leg count
 int main()
 {
-	/*std::unique_ptr <vsite::oop::v4::animal> animal_factory = vsite::oop::v4::animal::factory();
-	vsite::oop::v4::animal* animal_ptr = animal_factory.get();*/
-
 	vsite::oop::v4::leg_counter lc;
 
 	unsigned int animal_id = 0;
 
-	//while (std::cin >> animal_id) {
-	//	std::unique_ptr <vsite::oop::v4::animal> animal_factory = vsite::oop::v4::animal_factory();
+	std::cout << "Enter animals id: " << "\n";
 
-	//	//lc.add(animal_factory(animal_id));
-	//	animal_intf* a = animal_factory(animal_id);
-	//	lc.add(a);
-	//}
+	while (std::cin >> animal_id && animal_id > 0 &&animal_id < 4) {
+		lc.add_animal(vsite::oop::v4::animal_factory(animal_id).get());
+		std::cout << "Species: " << vsite::oop::v4::animal_factory(animal_id).get()->species() << "\n";
+	}
 
-	//std::cout << lc.vsite::oop::v4::total_leg_count() << std::endl;
+	std::cout << "Total legs: " << lc.legs() << std::endl;
 }
