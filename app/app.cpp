@@ -3,27 +3,27 @@
 
 namespace vsite::oop::v4
 {
-	uint32_t insect::legs() {
+	uint32_t insect::legs() const {
 		return 6;
 	}
 
-	uint32_t bird::legs() {
+	uint32_t bird::legs() const {
 		return 2;
 	};
 
-	uint32_t spider::legs() {
+	uint32_t spider::legs() const {
 		return 8;
 	};
 
-	std::string sparrow::species() {
+	std::string sparrow::species() const {
 		return "sparrow";
 	};
 
-	std::string tarantula::species() {
+	std::string tarantula::species() const {
 		return "tarantula";
 	};
 
-	std::string cockroach::species() {
+	std::string cockroach::species() const {
 		return "cockroach";
 	};
 
@@ -36,7 +36,7 @@ namespace vsite::oop::v4
 		case 3:
 			return std::make_unique<tarantula>();
 		default:
-			break;
+			return nullptr;
 		};
 	}
 

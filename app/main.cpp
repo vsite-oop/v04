@@ -6,7 +6,7 @@ using namespace vsite::oop::v4;
 // display total leg count
 int main()
 {
-	int lc = 0;
+	leg_counter lc;
 	while (1) {
 		int num;
 		std::cout << "Unesite ID zivotinje: ";
@@ -20,9 +20,9 @@ int main()
 
 		auto a = animal_factory(num);
 		std::cout << "Vasa zivotinja je " << a->species() << std::endl;
-		lc += a->legs();
+		lc.add_animal(animal_factory(num).get());
 	
 	}
 
-	std::cout << "Ukupan broj nogu je: " << lc << std::endl;
+	std::cout << "Ukupan broj nogu je: " << lc.legs() << std::endl;
 }
