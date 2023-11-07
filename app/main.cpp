@@ -22,7 +22,7 @@ int main()
 			break;
 		}
 
-		std::cout << "Zivotinja: " << lc.add_animal(animal_factory(animalId).get()).c_str() << "\n";
-		std::cout << "Ukupan broj nogu: " << lc.legs() << "\n\n";
+		std::cout << "Zivotinja: " << lc.add_animal(animal_factory(animalId).get()) << "\n";
 	}
+	std::cout << "Ukupan broj nogu: " << lc.legs() << "\n\n";
 }

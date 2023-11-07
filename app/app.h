@@ -7,37 +7,36 @@ namespace vsite::oop::v4
     class animal {  
     public:    
         virtual ~animal() = default;
-        virtual std::string species() = 0;
-        virtual unsigned int legs() = 0;
+        virtual std::string species() const = 0;
+        virtual unsigned int legs() const = 0;
     };
     
-    class insect : public animal { };
+    class insect : public animal { 
+        unsigned int legs() const override { return 6u; }
+    };
     class cockroach : public insect {
-    public:
-        virtual std::string species() { return "cockroach"; }
-        virtual unsigned int legs() { return 6u; }
+        std::string species() const override { return "cockroach"; }
     };
 
-    class spider : public animal { };
+    class spider : public animal { 
+        unsigned int legs() const override { return 8u; }
+    };
     class tarantula : public spider {
-    public:
-        virtual std::string species() { return "tarantula"; }
-        virtual unsigned int legs() { return 8u; }
+        std::string species() const override { return "tarantula"; }
     };
 
-    class bird : public animal { };
+    class bird : public animal {
+        unsigned int legs() const override { return 2u; }
+    };
     class sparrow : public bird {
-    public:
-        virtual std::string species() { return "sparrow"; }
-        virtual unsigned int legs() { return 2u; }
+        std::string species() const override { return "sparrow"; }
     };
 
     class leg_counter {
         unsigned legCount=0;
     public:
         std::string add_animal(animal* a);
-
-        unsigned legs() { return legCount; }
+        unsigned legs() const { return legCount; }
     };
 
     std::unique_ptr<animal> animal_factory(int animalId);
