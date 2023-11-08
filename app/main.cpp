@@ -6,12 +6,13 @@ int main()
 {
 	int aID;
 	vsite::oop::v4::leg_counter lc;
-	std::cout << "redni broj: " << "\n";
-	std::cin >> aID;
-	while (aID>0 && aID<4) {
-		std::cout << lc.add_animal(vsite::oop::v4::animal_factory(aID).get()) << "\n";
+	while (true) {
 		std::cout << "redni broj: " << "\n";
 		std::cin >> aID;
+		if (aID <= 0 || aID > 3) {
+			break;
+		}
+		std::cout << lc.add_animal(vsite::oop::v4::animal_factory(aID).get()) << "\n";
 	}
 
 	std::cout << lc.legs();

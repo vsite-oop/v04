@@ -3,30 +3,27 @@
 
 namespace vsite::oop::v4
 {
-	std::string animal::species(){
-		return "";
-	}
-	unsigned int animal::legs() {
+	unsigned int animal::legs() const {
 		return 0;
 	}
 
-	unsigned int bird::legs() {
+	unsigned int bird::legs() const{
 		return 2;
 	}
-	unsigned int spider::legs() {
+	unsigned int spider::legs() const {
 		return 8;
 	}
-	unsigned int insect::legs() {
+	unsigned int insect::legs() const {
 		return 6;
 	}
 
-	std::string sparrow::species() {
+	std::string sparrow::species() const{
 		return "sparrow";
 	}
-	std::string tarantula::species() {
+	std::string tarantula::species() const{
 		return "tarantula";
 	}
-	std::string cockroach::species() {
+	std::string cockroach::species() const{
 		return "cockroach";
 	}
 
@@ -49,7 +46,7 @@ namespace vsite::oop::v4
 		return animal->species();
 	}
 
-	unsigned int leg_counter::legs() {
+	unsigned int leg_counter::legs() const{
 		return leg_count;
 	}
 }
