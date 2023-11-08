@@ -7,7 +7,7 @@ using namespace vsite::oop::v4;
 int main()
 {
 	leg_counter lc;
-	while (1) {
+	while (true) {
 		int num;
 		std::cout << "Unesite ID zivotinje: ";
 		std::cin >> num;
@@ -18,9 +18,8 @@ int main()
 			continue;
 		}
 
-		auto a = animal_factory(num);
-		std::cout << "Vasa zivotinja je " << a->species() << std::endl;
-		lc.add_animal(animal_factory(num).get());
+		std::cout << "Vasa zivotinja je " << lc.add_animal(animal_factory(num).get()) << std::endl;
+		
 	
 	}
 
