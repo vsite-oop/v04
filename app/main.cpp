@@ -24,9 +24,7 @@ int main() {
 			break;
 		}
 
-		auto animal = animal_factory(unos);
-		legCounter.add_animal(animal.get());
-		std::cout << animal->species() << std::endl;
+		std::cout << legCounter.add_animal(animal_factory(unos).get()) << std::endl;
 	}
 
 }
