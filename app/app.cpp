@@ -3,9 +3,6 @@
 
 namespace vsite::oop::v4
 {
-	unsigned int animal::legs() const {
-		return 0;
-	}
 
 	unsigned int bird::legs() const{
 		return 2;
