@@ -24,9 +24,9 @@ namespace vsite::oop::v4
 		return a->species();
 	}
 
-	std::unique_ptr<animal> animal_factory(int which)
+	std::unique_ptr<animal> animal_factory(int idNumber)
 	{
-		switch (which)
+		switch (idNumber)
 		{
 		case 1:
 			return std::make_unique<cockroach>();

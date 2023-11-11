@@ -7,9 +7,9 @@ namespace vsite::oop::v4
 	class animal 
 	{
 	public:
-		virtual std::string species() = 0;
-		virtual unsigned legs() = 0;
-		virtual ~animal() = 0;	
+		virtual std::string species();
+		virtual unsigned legs();
+		virtual ~animal();	
 	};
 	
 
@@ -52,7 +52,7 @@ namespace vsite::oop::v4
 	
 	};
 
-	std::unique_ptr<animal> animal_factory(int which);
+	std::unique_ptr<animal> animal_factory(int idNumber);
 
 	class leg_counter 
 	{
