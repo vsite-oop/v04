@@ -5,8 +5,6 @@ namespace vsite::oop::v4
 {
 	animal::~animal() {};
 
-	std::string animal::species() { return " "; }
-	unsigned animal::legs() { return 0; }
 	
 	std::string cockroach::species() { return "cockroach"; }
 	unsigned insect::legs() { return 6; }
