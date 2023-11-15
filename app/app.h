@@ -13,8 +13,6 @@ namespace vsite::oop::v4
 
 	class insect :public animal {
 	public:
-		virtual ~insect() = default;
-		std::string species() const override;
 		unsigned int legs() const override;
 	};
 
@@ -26,8 +24,6 @@ namespace vsite::oop::v4
 
 	class spider :public animal {
 	public:
-		virtual ~spider() = default;
-		std::string species() const override;
 		unsigned int legs() const override;
 	};
 
@@ -39,8 +35,6 @@ namespace vsite::oop::v4
 
 	class bird :public animal {
 	public:
-		virtual ~bird() = default;
-		std::string species() const override;
 		unsigned int legs() const override;
 	};
 

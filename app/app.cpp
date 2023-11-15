@@ -3,34 +3,24 @@
 
 namespace vsite::oop::v4
 {
-	std::string insect::species() const {
-		return "insect";
-	}
 	unsigned int insect::legs() const {
 		return 6;
 	}
-	cockroach::cockroach() {};
+	cockroach::cockroach() {}
 	std::string cockroach::species() const {
 		return "cockroach";
-	}
-	std::string spider::species() const {
-		return "spider";
 	}
 	unsigned int spider::legs() const {
 		return 8;
 	}
-	tarantula::tarantula() {};
+	tarantula::tarantula() {}
 	std::string tarantula::species() const {
 		return "tarantula";
-	}
-
-	std::string bird::species() const {
-		return "bird";
 	}
 	unsigned int bird::legs() const {
 		return 2;
 	}
-	sparrow::sparrow() {};
+	sparrow::sparrow() {}
 	std::string sparrow::species() const {
 		return "sparrow";
 	}
