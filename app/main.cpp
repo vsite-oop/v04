@@ -7,23 +7,17 @@ using namespace::vsite::oop::v4;
 int main()
 {
     leg_counter lc;
-    unsigned int ID = 1;
+    unsigned int ID;
 
     while (true) {
         std::cout << "Unesite  ID zivotinje:" << "\n";
         std::cin >> ID;
-        if (ID > 3) {
-            std::cout << "Wrong input.\n";
-            continue;
-        }
-
-        if (ID == 0) {
-           
+        if (ID <= 0 || ID > 3) {
             break;
         }
-        lc.add_animal(animal_factory(ID).get());
-        std::cout << "Vrsta: " << animal_factory(ID).get()->species() << "\n";
-
+        
+        std::cout << "Vrsta: "<< lc.add_animal(vsite::oop::v4::animal_factory(ID).get()) << "\n";
+       
     }
     std::cout << "Ukupni broj nogu je: " << lc.legs();
 }
