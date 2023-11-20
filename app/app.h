@@ -44,7 +44,7 @@ namespace vsite::oop::v4
         unsigned int legs()const;
         std::string add_animal(const animal* new_animal);
     };
-    std::unique_ptr<animal> animal_factory(const uint32_t animalID);
+    std::unique_ptr<animal> animal_factory(const uint32_t ID);
 
 
 

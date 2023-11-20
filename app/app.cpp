@@ -34,17 +34,17 @@ namespace vsite::oop::v4
      unsigned int leg_counter::legs()const {
           return n_legs;
         }
-     std::unique_ptr<animal> animal_factory(const uint32_t animalID) {
-          switch (animalID) {
+     std::unique_ptr<animal> animal_factory(const uint32_t ID) {
+          switch (ID) {
             case 1:
                 return std::make_unique<cockroach>();
             case 2:
                 return std::make_unique<sparrow>();
             case 3:
                 return std::make_unique<tarantula>();
+           default:
+               return nullptr;
           }
-
-
 
      }
 
