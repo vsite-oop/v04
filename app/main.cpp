@@ -1,6 +1,7 @@
+#include<iostream>
 #include "app.h"
 
-//using vsite::oop::v4;
+using namespace vsite::oop::v4;
 
 // read animal id's (until 0) and display species name
 // display total leg count
@@ -12,5 +13,18 @@ na kraju ispise ukupan broj nogu zivotinja
 */
 int main()
 {
+	int idAnimal = 0;
+	leg_counter legCounter;
 
+	std::cout << "Unesite redni broj zivotinje: " << std::endl;
+	std::cout << "1. cockroach" << std::endl;
+	std::cout << "2. sparrow" << std::endl;
+	std::cout << "3. tarantula" << std::endl;
+	for (;;) {
+		std::cout << std::endl << "Dodaj zivotinju: ";
+		std::cin >> idAnimal;
+		if (idAnimal < 1 || idAnimal > 3) break;
+		std::cout << "Dodana zivotinja: " << legCounter.add_animal(animal_factory(idAnimal).get()) << std::endl;
+	}
+	std::cout << "Ukupan broj nogu svih zivotinja je: " << legCounter.legs() << std::endl;
 }
